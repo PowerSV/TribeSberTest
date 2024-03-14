@@ -1,5 +1,6 @@
 package com.tribe.task.services.impl;
 
+import com.tribe.task.dto.FactorialRequest;
 import com.tribe.task.dto.FactorialResponse;
 import com.tribe.task.services.FactorialCalculator;
 import org.springframework.stereotype.Service;
@@ -11,10 +12,8 @@ import java.util.stream.IntStream;
 public class FactorialService implements FactorialCalculator {
 
     @Override
-    public FactorialResponse calculateFactorial(int number) throws IllegalArgumentException {
-        if (number < 0 || number > 100) {
-            throw new IllegalArgumentException("Некорректные входные данные: " + number + " < 0 или " + number + " > 100");
-        }
+    public FactorialResponse calculateFactorial(FactorialRequest request) {
+        int number = request.getFactorialNum();
         if (number < 2) {
             return new FactorialResponse(BigInteger.valueOf(1));
         }

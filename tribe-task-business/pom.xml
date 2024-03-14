@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>com.tribe.task</groupId>
-            <artifactId>tribe-task-web</artifactId>
+            <artifactId>tribe-task-dto</artifactId>
             <version>${revision}${changelist}</version>
             <scope>compile</scope>
         </dependency>

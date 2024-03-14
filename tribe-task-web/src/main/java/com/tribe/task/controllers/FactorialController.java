@@ -3,6 +3,7 @@ package com.tribe.task.controllers;
 import com.tribe.task.dto.FactorialRequest;
 import com.tribe.task.dto.FactorialResponse;
 import com.tribe.task.services.FactorialCalculator;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +21,8 @@ public class FactorialController {
     }
 
     @GetMapping("/factorial")
-    public ResponseEntity<FactorialResponse> getFactorial(@RequestBody FactorialRequest request) {
-        System.out.println("hyi");
+    public ResponseEntity<FactorialResponse> getFactorial(@RequestBody @Valid FactorialRequest request) {
 
-        return ResponseEntity.ok()
-                .body(factorialCalculator.calculateFactorial(
-                        request.getFactorialNum())
-                );
+        return ResponseEntity.ok().body(factorialCalculator.calculateFactorial(request));
     }
 }

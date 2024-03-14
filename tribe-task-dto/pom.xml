@@ -7,8 +7,8 @@
         <version>${revision}${changelist}</version>
     </parent>
 
-    <artifactId>tribe-task-web</artifactId>
-    <name>tribe-task-web</name>
+    <artifactId>tribe-task-dto</artifactId>
+    <name>tribe-task-dto</name>
 
     <dependencies>
         <dependency>
@@ -16,17 +16,8 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.tribe.task</groupId>
-            <artifactId>tribe-task-business</artifactId>
-            <version>${revision}${changelist}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.tribe.task</groupId>
-            <artifactId>tribe-task-dto</artifactId>
-            <version>${revision}${changelist}</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
     </dependencies>
-
 </project>
