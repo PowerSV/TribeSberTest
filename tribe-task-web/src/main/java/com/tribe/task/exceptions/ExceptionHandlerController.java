@@ -15,14 +15,12 @@ import java.util.List;
 public class ExceptionHandlerController {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        // Получение списка ошибок валидации из BindingResult
         BindingResult bindingResult = ex.getBindingResult();
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
 
-        // Создание сообщения об ошибке на основе полей и сообщений об ошибках
         StringBuilder errorMessage = new StringBuilder();
         for (FieldError fieldError : fieldErrors) {
-            errorMessage.append(fieldError.getDefaultMessage() + "\n");
+            errorMessage.append(fieldError.getDefaultMessage()).append("\n");
         }
 
         ErrorResponse errorResponse = ErrorResponse
