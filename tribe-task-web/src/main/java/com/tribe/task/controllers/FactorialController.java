@@ -5,6 +5,7 @@ import com.tribe.task.dto.FactorialResponse;
 import com.tribe.task.services.FactorialCalculator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,9 +21,13 @@ public class FactorialController {
         this.factorialCalculator = factorialCalculator;
     }
 
-    @GetMapping("/factorial")
+    @GetMapping(value = "/factorial",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<FactorialResponse> getFactorial(@RequestBody @Valid FactorialRequest request) {
 
-        return ResponseEntity.ok().body(factorialCalculator.calculateFactorial(request));
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(factorialCalculator.calculateFactorial(request));
     }
 }

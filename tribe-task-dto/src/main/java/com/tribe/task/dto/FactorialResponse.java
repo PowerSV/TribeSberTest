@@ -1,19 +1,13 @@
 package com.tribe.task.dto;
 
+import lombok.*;
+
 import java.math.BigInteger;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class FactorialResponse {
     private BigInteger result;
-
-    public FactorialResponse(BigInteger result) {
-        this.result = result;
-    }
-
-    public BigInteger getResult() {
-        return result;
-    }
-
-    public void setResult(BigInteger result) {
-        this.result = result;
-    }
 }

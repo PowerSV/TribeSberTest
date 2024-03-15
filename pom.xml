@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
-	<groupId>com.tribe.task</groupId>
-	<artifactId>TestTaskTribe</artifactId>
-	<version>${revision}${changelist}</version>
-	<packaging>pom</packaging>
-	<name>TestTaskTribe</name>
+    <groupId>com.tribe.task</groupId>
+    <artifactId>TestTaskTribe</artifactId>
+    <version>${revision}${changelist}</version>
+    <packaging>pom</packaging>
+    <name>TestTaskTribe</name>
 
-	<modules>
-		<module>tribe-task-web</module>
-		<module>tribe-task-app</module>
-		<module>tribe-task-dto</module>
-		<module>tribe-task-business</module>
+    <modules>
+        <module>tribe-task-web</module>
+        <module>tribe-task-app</module>
+        <module>tribe-task-dto</module>
+        <module>tribe-task-business</module>
     </modules>
 
-	<properties>
-		<revision>0.0.1</revision>
-		<changelist>-SNAPSHOT</changelist>
-		<java.version>17</java.version>
-		<spring.boot.version>3.2.3</spring.boot.version>
-	</properties>
+    <properties>
+        <revision>0.0.1</revision>
+        <changelist>-SNAPSHOT</changelist>
+        <java.version>17</java.version>
+        <spring.boot.version>3.2.3</spring.boot.version>
+    </properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-web</artifactId>
-				<version>${spring.boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-test</artifactId>
-				<version>${spring.boot.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-validation</artifactId>
-				<version>${spring.boot.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

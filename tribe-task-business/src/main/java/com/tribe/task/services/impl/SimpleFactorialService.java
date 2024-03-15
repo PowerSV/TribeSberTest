@@ -9,11 +9,16 @@ import java.math.BigInteger;
 import java.util.stream.IntStream;
 
 @Service
-public class FactorialService implements FactorialCalculator {
+public class SimpleFactorialService implements FactorialCalculator {
 
     @Override
-    public FactorialResponse calculateFactorial(FactorialRequest request) {
+    public FactorialResponse calculateFactorial(FactorialRequest request) throws IllegalArgumentException {
         int number = request.getFactorialNum();
+
+        if (number < 0 || number > 100) {
+            throw new IllegalArgumentException();
+        }
+
         if (number < 2) {
             return new FactorialResponse(BigInteger.valueOf(1));
         }
