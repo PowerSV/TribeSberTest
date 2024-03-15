@@ -18,8 +18,8 @@
 	<modules>
 		<module>tribe-task-web</module>
 		<module>tribe-task-app</module>
+		<module>tribe-task-dto</module>
 		<module>tribe-task-business</module>
-        <module>tribe-task-dto</module>
     </modules>
 
 	<properties>
@@ -49,17 +49,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.tribe.task.TestTaskTribeApplication</mainClass>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>
