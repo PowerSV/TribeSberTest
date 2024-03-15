@@ -18,8 +18,8 @@
 	<modules>
 		<module>tribe-task-web</module>
 		<module>tribe-task-app</module>
+		<module>tribe-task-dto</module>
 		<module>tribe-task-business</module>
-        <module>tribe-task-dto</module>
     </modules>
 
 	<properties>
