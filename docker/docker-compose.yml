@@ -10,3 +10,25 @@ services:
     container_name: app
     ports:
       - "8080:8080"
+    networks:
+      - prometheus_net
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: unless-stopped
+    depends_on:
+      - app
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - prometheus_net
+
+networks:
+  prometheus_net:
+    driver: bridge
+
