@@ -11,9 +11,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/factorial")
 @Tag(name = "FactorialController", description = "Контроллер для вычисления факториала")
 public class FactorialController {
 
@@ -24,8 +26,7 @@ public class FactorialController {
         this.factorialCalculator = factorialCalculator;
     }
 
-    @GetMapping(value = "/factorial",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
+    @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Вычислить факториал",
             description = "Вычисляет факториал заданного числа")
