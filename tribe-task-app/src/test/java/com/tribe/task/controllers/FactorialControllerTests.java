@@ -4,10 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tribe.task.dto.FactorialRequest;
 import com.tribe.task.dto.FactorialResponse;
 import com.tribe.task.services.FactorialCalculator;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -88,6 +92,14 @@ public class FactorialControllerTests {
                 .andExpect(status().isBadRequest());
 
         verify(service, times(0)).calculateFactorial(any());
+    }
+
+    @TestConfiguration
+    static class AdditionalConfig {
+        @Bean
+        public MeterRegistry registry() {
+            return new SimpleMeterRegistry();
+        }
     }
 }
 
