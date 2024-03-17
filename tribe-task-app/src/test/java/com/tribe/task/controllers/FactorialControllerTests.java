@@ -70,7 +70,7 @@ public class FactorialControllerTests {
 
     @Test
     public void FactorialController_InvalidRequest_DataGreaterThan100() throws Exception {
-        FactorialRequest request = new FactorialRequest(101);
+        FactorialRequest request = new FactorialRequest(10001);
 
         mockMvc.perform(get("/factorial")
                         .contentType(MediaType.APPLICATION_JSON)
