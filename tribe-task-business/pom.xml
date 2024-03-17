@@ -17,9 +17,13 @@
         </dependency>
         <dependency>
             <groupId>com.tribe.task</groupId>
-            <artifactId>tribe-task-web</artifactId>
+            <artifactId>tribe-task-dto</artifactId>
             <version>${revision}${changelist}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
 </project>

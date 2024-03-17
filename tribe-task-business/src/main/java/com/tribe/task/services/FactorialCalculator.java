@@ -1,5 +1,6 @@
 package com.tribe.task.services;
 
+import com.tribe.task.dto.FactorialRequest;
 import com.tribe.task.dto.FactorialResponse;
 
 /**
@@ -10,9 +11,8 @@ public interface FactorialCalculator {
     /**
      * Метод для вычисления факториала числа.
      *
-     * @param number число, для которого вычисляется факториал
-     * @return факториал числа в виде объекта типа BigInteger
-     * @throws IllegalArgumentException если передано отрицательное число
+     * @param request объект запроса, содержащий число, для которого вычисляется факториал
+     * @return объект ответа, содержащий результат вычисления факториала
      */
-    FactorialResponse calculateFactorial(int number) throws IllegalArgumentException;
+    FactorialResponse calculateFactorial(FactorialRequest request);
 }

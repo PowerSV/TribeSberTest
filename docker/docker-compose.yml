@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+
+  app:
+    image: 'test-task-tribe'
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: app
+    ports:
+      - "8080:8080"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: unless-stopped
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
