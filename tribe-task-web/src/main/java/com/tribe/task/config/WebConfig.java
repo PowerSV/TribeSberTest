@@ -36,8 +36,8 @@ public class WebConfig {
                     .builder("factorial_timer")
                     .publishPercentiles(0.60, 0.95, 0.99)
                     .publishPercentileHistogram()
-                    .minimumExpectedValue(Duration.ofNanos(500))
-                    .maximumExpectedValue(Duration.ofMillis(500))
+                    .minimumExpectedValue(Duration.ofNanos(1000))
+                    .maximumExpectedValue(Duration.ofMillis(10))
                     .register(meterRegistry);
         };
     }

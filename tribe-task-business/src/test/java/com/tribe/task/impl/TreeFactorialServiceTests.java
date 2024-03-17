@@ -2,7 +2,7 @@ package com.tribe.task.impl;
 
 import com.tribe.task.dto.FactorialRequest;
 import com.tribe.task.dto.FactorialResponse;
-import com.tribe.task.services.impl.SimpleFactorialService;
+import com.tribe.task.services.impl.TreeFactorialService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,13 +11,13 @@ import java.math.BigInteger;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class SimpleFactorialServiceTests {
+public class TreeFactorialServiceTests {
 
-    private SimpleFactorialService serviceUnderTest;
+    private TreeFactorialService serviceUnderTest;
 
     @BeforeEach
     public void setUp() {
-        serviceUnderTest = new SimpleFactorialService();
+        serviceUnderTest = new TreeFactorialService();
     }
 
     @Test
@@ -72,7 +72,7 @@ public class SimpleFactorialServiceTests {
 
     @Test
     public void testFactorialProperty() {
-        for (int num = 1; num < 100; num++) {
+        for (int num = 1; num < 10_000; num++) {
             FactorialRequest request1 = new FactorialRequest(num);
             FactorialRequest request2 = new FactorialRequest(num - 1);
 

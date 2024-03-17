@@ -16,7 +16,7 @@ public class FactorialRequest {
 
     @NotNull(message = "Некорректные входные данные: число не должно быть null")
     @PositiveOrZero(message = "Некорректные входные данные: число не должно быть отрицательным")
-    @Max(value = 100, message = "Некорректные входные данные: число не должно превышать 100")
+    @Max(value = 10_000, message = "Некорректные входные данные: число не должно превышать 10_000")
     @JsonProperty("factorial_num")
     @Schema(description = "Число, для которого будет вычисляться факториал.")
     private Integer factorialNum;
